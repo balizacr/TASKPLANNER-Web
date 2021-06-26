@@ -1,0 +1,101 @@
+
+
+  <body>
+  
+    <nav class="navbar navbar-dark bg-custom-2">
+  
+      <a class="navbar-brand color1" href="#a">TASKPLANNER CE</a>
+      <a class="navbar-brand color1"  (click)="gotoDashboard()">Dashboard</a>
+      <a class="navbar-brand color1"  (click)="gotoBoards()">Boards</a>
+      <a class="navbar-brand color1"  (click)="gotoFriends()">Friends</a>
+      <a class="navbar-brand color1"  (click)="gotoLogin()">Log Out</a>
+    </nav>
+  
+
+    <div class="searchmargin">
+
+      <form class="form-inline md-form mr-auto mb-4 margincenter">
+        <input
+          id = "friendInput"
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="Search "
+          aria-label="Search"
+          style="
+            color: #ffffff;
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 12px;
+          "
+          
+        >
+        <!--label for="friendInput">{{fname}}</label-->
+  
+        <!-- preguntar como llamar otra funcion a parte del modal-->
+        <!-- cambiar boton por frame.show()-->
+  
+        <button
+          class="btn aqua-gradient btn-rounded btn-sm my-0"
+          type="submit"
+          
+          
+        >
+        
+          Search friends
+        </button>
+  
+      </form>
+    </div>
+
+    <h2 class="marginstopbotom" style="text-align: center;">My friends</h2>
+
+
+    <mdb-card class="example-1 square scrollbar-cyan bordered-cyan">
+          
+      <mdb-card-body>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th>
+              <th scope="col" >First</th>
+              <th scope="col" >Last</th>
+              <th scope="col">Mail</th>
+              <th scope="col">Action</th> -->
+            </tr>
+          </thead>
+    
+          <tbody>
+    
+            <tr class="table-primary" *ngFor="let p of people;let i = index;">
+              <th scope="row">{{i+1}}</th>
+              <td>{{p.first}}</td>
+              <td>{{p.last}}</td>
+              <td>{{p.mail}}</td>
+              
+              <td> 
+                <button mdbBtn type="button" color="primary" mdbWavesEffect>
+                  <mdb-icon fas icon="fa fa-trash" class="mr-1"></mdb-icon>Delete
+                </button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </mdb-card-body>
+    </mdb-card>
+
+    
+  </body>
+
+
+
+
+
+
+
+
+  
+   
+

@@ -1,0 +1,222 @@
+
+
+  <body>
+  
+    <nav class="navbar navbar-dark bg-custom-2">
+  
+      <a class="navbar-brand color1" href="#a">TASKPLANNER CE</a>
+      <a class="navbar-brand color1"  (click)="gotoDashboard()">Dashboard</a>
+      <a class="navbar-brand color1"  (click)="gotoBoards()">Boards</a>
+      <a class="navbar-brand color1"  (click)="gotoFriends()">Friends</a>
+      <a class="navbar-brand color1"  (click)="gotoLogin()">Log Out</a>
+    </nav>
+
+    <div class="margincreate">
+      <button
+          class="btn aqua-gradient btn-rounded btn-sm my-0"
+          type="submit"  (click) = "newBoard()"
+        >
+          New board
+        </button>
+    </div>
+
+    <div class="searchmargin">
+      <div class="margincenter">
+
+     
+      
+        <button type="button" class="btn btn-outline-info btn-rounded">
+          All
+        </button>
+  
+        <button type="button" class="btn btn-outline-success btn-rounded">
+          Personal
+        </button>
+  
+        <button type="button" class="btn btn-outline-primary btn-rounded">
+          Communal
+        </button>
+        
+        <button type="button" class="btn btn-outline-warning btn-rounded">
+          Academic
+        </button>
+  
+        
+  
+  </div>
+
+  <div class="margincenter">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th>
+          <th scope="col" >First</th>
+          <th scope="col" >Last</th>
+          <th scope="col">Mail</th>
+          <th scope="col">Action</th> -->
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let b of boards;let i = index;" class="margincenter">
+          
+          <td class="marginright">{{b.name}}</td>
+          
+          
+          <td> 
+            {{b.type}}
+            
+            
+
+            <button type="button" class="btn btn-dark btn-floatingg">
+              <i class="fas fa-edit"></i>
+            </button>
+
+            <button type="button" class="btn btn-dark btn-floating">
+              <i class="fa fa-times-circle"></i>
+            </button>
+
+            
+
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+  </div>
+
+    </div>
+  
+  
+  </body>
+
+
+
+
+  <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="modal-content">
+
+  <!-- head -->
+
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">New board</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+
+   <!-- body -->
+   <div class="modal-body mx-3">
+
+
+    <div class="row">
+
+      
+
+
+    
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="fas fa-folder" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="defaultForm-email"  class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-text">Name</label>
+          
+        </div>
+   
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="fas fa-file-alt" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="defaultForm-pass"  class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-text">Description</label>
+          
+        </div>
+
+        <div class="dropdown" mdbDropdown>
+ 
+          <button mdbDropdownToggle mdbBtn color="dark" class="dropdown-toggle waves-light" type="button"
+                mdbWavesEffect>
+                Select category
+          </button>
+   
+   
+     <div class="dropdown-menu dropdown-dark">
+      
+       <a class="dropdown-item" *ngFor = "let o of options">{{o}}</a>
+       
+     </div>
+   </div>
+
+        <h6 class="margintopbot" style="text-align: center;"> Add collaborators</h6>
+
+        <mdb-card class="example-1 square scrollbar-cyan bordered-cyan">
+          
+          <mdb-card-body>
+
+            <table class="table">
+              <thead>
+                <tr>
+                 
+                </tr>
+              </thead>
+  
+              <tbody>
+  
+                <tr class="table-primary" *ngFor="let p of people;let i = index;">
+                  <td>{{p.mail}}</td>
+                  <td>
+
+                    <button type="button" class="btn btn-dark btn-floating">
+                      <i class="fas fa-plus-circle"></i>
+                    </button>
+
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+            
+          </mdb-card-body>
+        </mdb-card>
+
+      
+
+      
+
+
+    </div>
+
+
+
+
+   </div>
+
+   <!-- foot -->
+
+   <div class="modal-footer d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-success">
+      Save
+    </button>
+    <button type="button" class="btn btn-outline-danger">
+      Cancel
+    </button>
+   </div>
+ </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+  
+   
+
