@@ -1,152 +1,172 @@
+<header class="navbar navbar-dark bg-custom-2">
+
+	
+
+		<a class="navbar-brand color1" href="#a">TASKPLANNER CE</a>
+	  <a class="navbar-brand color1"  (click)="gotoDashboard()">Dashboard</a>
+    <a class="navbar-brand color1"  (click)="gotoBoards()">Boards</a>
+    <a class="navbar-brand color1"  (click)="gotoFriends()">Friends</a>
+		<a class="navbar-brand color1"  (click)="gotoLogin()">Log Out</a>
+
+	
+
+</header>
+<!-- End of masthead -->
 
 
-  <body>
-  
-    <nav class="navbar navbar-dark bg-custom-2">
-  
-      <a class="navbar-brand color1" href="#a">TASKPLANNER CE</a>
-      <a class="navbar-brand color1"  (click)="gotoDashboard()">Dashboard</a>
-      <a class="navbar-brand color1"  (click)="gotoBoards()">Boards</a>
-      <a class="navbar-brand color1"  (click)="gotoFriends()">Friends</a>
-      <a class="navbar-brand color1"  (click)="gotoLogin()">Log Out</a>
-    </nav>
-  
-    <div>
-  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-        height: 300px; /* Should be removed. Only for demonstration */
-      }
-      
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      </style>
-  
-  
- 
-        <h2 class="marginsTop" style="text-align:center">Board</h2>
-      
-      
-      
-      <div class="row">
-  
-        <div class="column" style="background-color:rgb(255, 255, 255);">
-  
-          <div class="panel panel-default mybackgroundblue">
-            <h2 style="text-align:center">Monthly created boards</h2>
-          </div>
-
-            <div class=" marginsTop2">
-              <div *ngFor = "let m of months; let i = index;" class="marginsLeft">
 
 
-                <div class="black-text"> {{m}} </div>
-  
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" [style.width]="values[i] + '%'"
-                         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{values[i]}}</div>
-                      </div>
+
+
   
   
-              </div>
-            </div>
-           
   
-            <div
-              data-chart = "bar"
-              data-dataset-label="traffic"
-              data-labels="['Monday','Tuesday']"
-              data-dataset-data="[1,2]"
-            >
-              
   
-            </div>
-  
-            
-         
+
+    <main >
+
+      
+    <!-- Lists container -->
+<section class="lists-container ">
+
+	<div class="list">
+
+		<h3 class="list-title">Tasks to Do</h3>
+
+		<ul class="list-items">
+			<li>Complete mock-up for client website</li>
+			<li>Email mock-up to client for feedback</li>
+			<li>Update personal website header background image</li>
+			<li>Update personal website heading fonts</li>
+			<li>Add google map to personal website</li>
+			<li>Begin draft of CSS Grid article</li>
+			<li>Read new CSS-Tricks articles</li>
+			<li>Read new Smashing Magazine articles</li>
+			<li>Read other bookmarked articles</li>
+			<li>Look through portfolios to gather inspiration</li>
+			<li>Create something cool for CodePen</li>
+			<li>Post latest CodePen work on Twitter</li>
+			<li>Listen to new Syntax.fm episode</li>
+			<li>Listen to new CodePen Radio episode</li>
+		</ul>
+
+		<button class="add-card-btn btn">Add a card</button>
+
+	</div>
+
+	<div class="list">
+
+		<h3 class="list-title">Completed Tasks</h3>
+
+		<ul class="list-items">
+			<li>Clear email inbox</li>
+			<li>Finalise requirements for client web design</li>
+			<li>Begin work on mock-up for client website</li>
+		</ul>
+
+		<button class="add-card-btn btn">Add a card</button>
+
+	</div>
+
+
+	<button class="add-list-btn btn">Add a list</button>
+
+</section>
+
+       
+
+
+</main>
+
+    <aside class="column aside">
+
+      <div class="panel panel-default mybackgroundblue" style="text-align: center;">
+
+        Collaboration
+
+        <mdb-card class="example-1 square scrollbar-cyan bordered-cyan">
           
+          <mdb-card-body>
+
+            <table class="table">
+              <thead>
+                <tr>
+                 
+                </tr>
+              </thead>
+  
+              <tbody>
+  
+                <tr class="table-primary" *ngFor="let p of people;let i = index;">
+                  <td>{{p.mail}}</td>
+                  <td>
+
+                    <button type="button" class="btn btn-dark btn-floating">
+                      <i class="fas fa-plus-circle"></i>
+                    </button>
+
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+            
+          </mdb-card-body>
+        </mdb-card>
+
+        Professors
+
+        <mdb-card class="example-1 square scrollbar-cyan bordered-cyan">
+          
+          <mdb-card-body>
+
+            <table class="table">
+              <thead>
+                <tr>
+                 
+                </tr>
+              </thead>
+  
+              <tbody>
+  
+                <tr class="table-primary" *ngFor="let p of people;let i = index;">
+                  <td>{{p.mail}}</td>
+                  <td>
+
+                    <button type="button" class="btn btn-dark btn-floating">
+                      <i class="fas fa-plus-circle"></i>
+                    </button>
+
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+            
+          </mdb-card-body>
+        </mdb-card>
+
+        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+
+          <button type="button" class="btn btn-primary bgbtn marginsTopb">Add professor</button>
+          <button type="button" class="btn btn-primary bgbtn marginsTopb">Add friend</button>
+          <button type="button" class="btn btn-primary bgbtn marginsTopb">Add file</button>
+
         </div>
-  
-        <div class="column" style="background-color:rgb(255, 255, 255);">
-  
-          <div class="panel panel-default mybackgroundblue">
-            <h2 style="text-align:center">Quantity of created boards</h2>
-          </div>
-
-          <h2 class= "marginsTop2 " style="text-align:center"> Total:  {{total}} </h2>
-  
-          <div *ngFor = "let n of boardNames; let i = index;" class="marginsLeft">
 
 
-            <div class="black-text"> {{n}} </div>
-
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" [style.width]="boardTypeQuantity[i] + '%'"
-                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{boardTypeQuantity[i]}}</div>
-                  </div>
 
 
-          </div>
-
-        </div>
-  
-        <div class="column" style="background-color:rgb(255, 255, 255);">
-  
-          <div class="panel panel-default mybackgroundblue">
-            <h2 style="text-align:center">Recently added friends</h2>
-          </div>
-
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col" style="text-align:center">First</th>
-                <th scope="col" style="text-align:center">Last</th>
-                <th scope="col" style="text-align:center">Mail</th>
-              </tr>
-            </thead>
-
-            <tbody>
-
-              <tr class="table-primary" *ngFor="let p of people;let i = index;">
-                <th scope="row">{{i+1}}</th>
-                <td>{{p.first}}</td>
-                <td>{{p.last}}</td>
-                <td>{{p.mail}}</td>
-              </tr>
-              
-            </tbody>
-          </table>
-
-
-        </div>
       </div>
-      
-  
-    </div>
-  
-  </body>
 
+    </aside>
 
-
-
-
-
-
+    
 
   
-   
+
+
+
 

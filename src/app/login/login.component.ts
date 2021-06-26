@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 //import { ApiusuariorolService } from '../services/apiusuariorol.service';
@@ -11,11 +12,13 @@ export class LoginComponent implements OnInit {
     public listUsuario = [];
     model: any = {};
     public account = "1";
+    public url: string = "http://localhost:4242";
 
 
   constructor(
       //private apiusuarioRol: ApiusuariorolService,
       private router: Router,
+      private _http: HttpClient,
 
   ) { }
 
@@ -28,7 +31,24 @@ export class LoginComponent implements OnInit {
       if(this.account==""){
           alert("Debe ingresar un ROL");
       }else{
-        this.router.navigate(['/dashboard']);
+
+        //this.router.navigate(['/dashboard']);
+
+        console.log(this.model.name);
+        console.log(this.model.password)
+        
+        let jsonEntry = {"email":this.model.name, "pass":this.model.password};
+
+        var response = this._http.post(this.url + "/login",jsonEntry).subscribe(
+            (val) => {
+                console.log("POST call successful value returned in body", 
+                            val);
+            },
+    );
+    
+
+        
+
         //this.router.navigate(['/lobby', this.model.name]);
       }
      /*  else if (this.account  == "1"){
@@ -73,6 +93,11 @@ export class LoginComponent implements OnInit {
 
   functionAdministrator(){
       this.account = "3";
+  }
+
+  gotoSignup(){
+    this.router.navigate(['/signup']);
+
   }
   
 

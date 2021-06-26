@@ -67,6 +67,10 @@ export class BoardsComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  gotoBoard(){
+    this.router.navigate(['/board']);
+  }
+
   newBoard(){
 
     this.newboardModal.show();

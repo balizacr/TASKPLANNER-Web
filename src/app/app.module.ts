@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardsComponent } from './boards/boards.component';
 import { FriendsComponent } from './friends/friends.component';
 import { BoardComponent } from './board/board.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -28,6 +29,7 @@ import { BoardComponent } from './board/board.component';
     BoardsComponent,
     FriendsComponent,
     BoardComponent,
+    SignupComponent,
   ],
 
   imports: [
@@ -46,6 +48,7 @@ import { BoardComponent } from './board/board.component';
       { path: 'boards', component: BoardsComponent},
       { path: 'friends', component: FriendsComponent},
       { path: 'board', component: BoardComponent},
+      { path: 'signup', component: SignupComponent},
   
     ])
   ],

@@ -1,0 +1,188 @@
+<nav class="navbar navbar-dark bg-custom-2">
+  
+  <a class="navbar-brand color1" (click) = "gotoLogin()">TASKPLANNER CE</a>
+  
+</nav>
+
+
+<!-- Default form register -->
+<form class="text-center border border-light view ">
+
+  <p class="h4 mb-4">Sign up</p>
+
+  
+    <!-- First name -->
+          <input
+          type="text"
+          id="orangeForm-name"
+          class="form-control margintopbot"
+          [formControl]="signupFormModalName"
+          mdbInput
+          mdbValidate
+          placeholder="First name"
+        />
+        <mdb-error
+          *ngIf="
+            signupFormModalName.invalid &&
+            (signupFormModalName.dirty || signupFormModalName.touched)
+          "
+        >
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="
+            signupFormModalName.valid &&
+            (signupFormModalName.dirty || signupFormModalName.touched)
+          "
+        >
+          Input valid
+        </mdb-success>
+    
+    
+      <!-- Last name -->
+
+      <div class="col">
+
+        <input
+          type="text"
+          id="orangeForm-name"
+          class="form-control margintopbot"
+          [formControl]="signupFormModalLast"
+          mdbInput
+          mdbValidate
+          placeholder="Last name"
+        />
+        <mdb-error
+          *ngIf="
+          signupFormModalLast.invalid &&
+            (signupFormModalLast.dirty || signupFormModalLast.touched)
+          "
+        >
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="
+          signupFormModalLast.valid &&
+            (signupFormModalLast.dirty || signupFormModalLast.touched)
+          "
+        >
+          Input valid
+        </mdb-success>
+
+      </div>
+      
+  
+
+      <!-- school id -->
+
+      <div class="col">
+
+        <input
+        type="text"
+        id="orangeForm-name"
+        class="form-control margintopbot"
+        [formControl]="signupFormModalSchoolId"
+        mdbInput
+        mdbValidate
+        placeholder="School Id"
+      />
+      <mdb-error
+        *ngIf="
+        signupFormModalSchoolId.invalid &&
+          (signupFormModalSchoolId.dirty || signupFormModalSchoolId.touched)
+        "
+      >
+        Input invalid
+      </mdb-error>
+      <mdb-success
+        *ngIf="
+        signupFormModalSchoolId.valid &&
+          (signupFormModalSchoolId.dirty || signupFormModalSchoolId.touched)
+        "
+      >
+        Input valid
+      </mdb-success>
+
+      </div>
+
+     
+    
+   
+      <!-- gmail -->
+
+      <div class="col">
+
+        <input
+        type="email"
+        id="orangeForm-name"
+        class="form-control margintopbot"
+        [formControl]="signupFormModalSchoolGmail"
+        mdbInput
+        mdbValidate
+        placeholder="School gmail"
+      />
+      <mdb-error
+        *ngIf="
+        signupFormModalSchoolGmail.invalid &&
+          (signupFormModalSchoolGmail.dirty || signupFormModalSchoolGmail.touched )
+        "
+      >
+        Input invalid
+      </mdb-error>
+      <mdb-success
+        *ngIf="
+        signupFormModalSchoolGmail.valid &&
+          (signupFormModalSchoolGmail.dirty || signupFormModalSchoolGmail.touched)
+        "
+      >
+        Input valid
+      </mdb-success>
+
+      </div>
+      
+
+
+      <!-- Password -->
+
+
+      <div class="col">
+
+        <input
+        type="password"
+        id="orangeForm-password"
+        class="form-control"
+        [formControl]="signupFormModalPassword"
+        mdbInput
+        mdbValidate
+        placeholder="Password"
+      />
+      
+      <mdb-error
+        *ngIf="
+          signupFormModalPassword.invalid &&
+          (signupFormModalPassword.dirty ||
+            signupFormModalPassword.touched)
+        "
+      >
+        Input invalid
+      </mdb-error>
+      <mdb-success
+        *ngIf="
+          signupFormModalPassword.valid &&
+          (signupFormModalPassword.dirty ||
+            signupFormModalPassword.touched)
+        "
+      >
+        Input valid
+      </mdb-success>
+
+      </div>
+      
+
+    
+  <!-- Sign up button -->
+  <button mdbBtn color="info" block="true" class="my-4" type="submit"  >Sign up</button>
+
+</form>
+<!-- Default form register -->
+
