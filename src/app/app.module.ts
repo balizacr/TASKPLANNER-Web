@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardsComponent } from './boards/boards.component';
-import { FriendsComponent } from './friends/friends.component';
+import { FriendsComponent } from './Friends/friends.component';
 import { BoardComponent } from './board/board.component';
 import { SignupComponent } from './signup/signup.component';
 
